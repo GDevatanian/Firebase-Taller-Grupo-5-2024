@@ -1,20 +1,24 @@
 package com.example.trabajopracticotallerdediseo
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class CrashlyticsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.crashlytics_activity)
 
         val mainButton: Button = findViewById(R.id.main_button)
+        val backButton: Button = findViewById(R.id.back_button)
         mainButton.setOnClickListener {
-            val intent = Intent(this, CrashlyticsActivity::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "CrashlyticsActivity", Toast.LENGTH_SHORT).show()
+        }
+
+        backButton.setOnClickListener {
+            onBackPressed()
         }
     }
 }
