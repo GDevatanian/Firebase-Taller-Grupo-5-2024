@@ -18,7 +18,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
-            <intent-filter>
+            <intent-filter> <!-- TODO: Quitar este intent filter de la main activity cuando se implemente login y agregarlo en la activity de login-->
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -26,6 +26,14 @@
         <activity
             android:name=".CrashlyticsActivity"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+        <!--<intent-filter>  TODO: Quitar los comentarios de esta activity cuando se implemente login
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
         </activity>
     </application>
 
