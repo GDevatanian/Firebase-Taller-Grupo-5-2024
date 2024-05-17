@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756713095791",
+    "project_id": "grupo-5-taller-de-diseno",
+    "storage_bucket": "grupo-5-taller-de-diseno.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756713095791:android:b3406f487f5b78cbba839a",
+        "android_client_info": {
+          "package_name": "com.example.trabajopracticotallerdediseo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp8GAwevu2pD2cfjFpwRIS6nBt5L7kaF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
