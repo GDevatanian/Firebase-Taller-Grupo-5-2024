@@ -10,5 +10,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login_activity)
 
         // TODO: Implementar login
+
+
+
+
     }
 }
