@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray">
 
+    <TableLayout
+        android:id="@+id/contenedorImagen"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:paddingTop="50dp"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/loginImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_userpp_vcimage"></ImageView>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/contenedorImagen"
+        android:text="@string/email"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:paddingTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"></TextView>
+
+    <EditText
+        android:id="@+id/et_enterEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_email"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="20dp"
+        android:text="@string/enter_email"></EditText>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_enterEmail"
+        android:text="@string/password"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"></TextView>
+
+    <EditText
+        android:id="@+id/et_enterPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_password"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="20dp"
+        android:text="@string/enter_password"></EditText>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_enterPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/loginButton"
+        ></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
