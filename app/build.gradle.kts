@@ -67,6 +67,7 @@ dependencies {
     // https://firebase.google.com/docs/android/setup#available-libraries
     //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     implementation("androidx.constraintlayout:constraintlayout:2.1.0")
+    implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.appcompat:appcompat:1.3.0")
