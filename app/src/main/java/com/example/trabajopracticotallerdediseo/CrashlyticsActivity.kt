@@ -17,7 +17,7 @@ class CrashlyticsActivity : AppCompatActivity() {
 
         val crashButton: Button = findViewById(R.id.crash_button)
         val anrButton: Button = findViewById(R.id.anr_button)
-        val backButton: Button = findViewById(R.id.back_button)
+        val backButton: Button = findViewById(R.id.crashlytics_activity_back_button)
         crashButton.setOnClickListener {
             // Logear evento de analytics
             firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {

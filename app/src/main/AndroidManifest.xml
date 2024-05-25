@@ -28,6 +28,10 @@
             android:exported="true">
         </activity>
         <activity
+            android:name=".RemoteConfigActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
         <intent-filter>  <!-- TODO: quitar este intent-filter una vez implementado la activity de login -->

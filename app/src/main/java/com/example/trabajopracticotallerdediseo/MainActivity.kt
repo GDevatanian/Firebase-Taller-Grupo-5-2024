@@ -11,9 +11,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        val mainButton: Button = findViewById(R.id.crashlytics_button)
-        mainButton.setOnClickListener {
+        val crashlyticsButton: Button = findViewById(R.id.crashlytics_button)
+        val remoteConfigButton: Button = findViewById(R.id.remote_config_button)
+        crashlyticsButton.setOnClickListener {
             val intent = Intent(this, CrashlyticsActivity::class.java)
+            startActivity(intent)
+        }
+        remoteConfigButton.setOnClickListener {
+            val intent = Intent(this, RemoteConfigActivity::class.java)
             startActivity(intent)
         }
     }
