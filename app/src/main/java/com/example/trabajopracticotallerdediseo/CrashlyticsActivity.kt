@@ -2,19 +2,44 @@ package com.example.trabajopracticotallerdediseo
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.logEvent
 
 class CrashlyticsActivity : AppCompatActivity() {
 
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.crashlytics_activity)
 
-        val mainButton: Button = findViewById(R.id.main_button)
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+        val crashButton: Button = findViewById(R.id.crash_button)
+        val anrButton: Button = findViewById(R.id.anr_button)
         val backButton: Button = findViewById(R.id.back_button)
-        mainButton.setOnClickListener {
-            Toast.makeText(this, "CrashlyticsActivity", Toast.LENGTH_SHORT).show()
+        crashButton.setOnClickListener {
+            // Logear evento de analytics
+            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {
+                param(FirebaseAnalytics.Param.ITEM_ID, "anr_button")
+                param(FirebaseAnalytics.Param.ITEM_NAME, "Boton de Crash Clickeado")
+                param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
+            }
+
+            // Causar un crash
+            throw RuntimeException("Crash de prueba para Crashlytics")
+        }
+
+        anrButton.setOnClickListener {
+            // Logear evento de analytics
+            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {
+                param(FirebaseAnalytics.Param.ITEM_ID, "anr_button")
+                param(FirebaseAnalytics.Param.ITEM_NAME, "Boton de ANR Clickeado")
+                param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
+            }
+
+            // Causar un ANR
+            Thread.sleep(10000)
         }
 
         backButton.setOnClickListener {

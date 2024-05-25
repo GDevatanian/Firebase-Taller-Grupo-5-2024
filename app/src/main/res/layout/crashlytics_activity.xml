@@ -10,16 +10,16 @@
         android:layout_height="wrap_content"
         android:text="Crashlytics Activity"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/main_button"
+        app:layout_constraintBottom_toTopOf="@+id/crash_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/main_button"
+        android:id="@+id/crash_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CrashlyticsActivity Button"
+        android:text="Crash Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +27,20 @@
         android:layout_marginTop="16dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp" />
+
+    <Button
+        android:id="@+id/anr_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="ANR Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crash_button"
+        app:layout_constraintVertical_bias="0.276" />
 
     <Button
         android:id="@+id/back_button"

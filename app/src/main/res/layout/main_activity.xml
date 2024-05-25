@@ -10,13 +10,13 @@
         android:layout_height="wrap_content"
         android:text="Main Activity"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/main_button"
+        app:layout_constraintBottom_toTopOf="@+id/crashlytics_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/main_button"
+        android:id="@+id/crashlytics_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Boton a crashlytics"
