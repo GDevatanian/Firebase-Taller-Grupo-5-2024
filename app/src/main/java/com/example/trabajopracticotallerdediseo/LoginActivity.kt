@@ -10,7 +10,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login_activity)
 
         // TODO: Implementar login
-
+        // TODO: Sumar la verificacion y pedido de permisos en esta activity dependiendo de la version de android
 
 
 
