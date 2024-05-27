@@ -7,7 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import com.example.trabajopracticotallerdediseo.MainActivity
+import com.example.trabajopracticotallerdediseo.PushNotificationActivity
 import com.example.trabajopracticotallerdediseo.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -19,7 +19,7 @@ class MessagingService : FirebaseMessagingService() {
 
         // Manejar la recepción de mensajes aquí
         remoteMessage.notification?.let {
-            sendNotification(it.body)
+            sendNotification(it.body, it.title)
         }
     }
 
@@ -28,8 +28,8 @@ class MessagingService : FirebaseMessagingService() {
         // Implementar enviar el token al servidor si usamos mensajes de prueba
     }
 
-    private fun sendNotification(messageBody: String?) {
-        val intent = Intent(this, MainActivity::class.java)
+    private fun sendNotification(messageBody: String?, title: String?) {
+        val intent = Intent(this, PushNotificationActivity::class.java) // Activity que se va a abrir cuando se toque la notificacion
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent,
             PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_IMMUTABLE)
@@ -37,7 +37,7 @@ class MessagingService : FirebaseMessagingService() {
         val channelId = "default_channel"
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle("FCM Message")
+            .setContentTitle(title ?: "Notificacion Push")
             .setContentText(messageBody)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
