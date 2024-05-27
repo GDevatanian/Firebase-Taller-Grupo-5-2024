@@ -64,6 +64,7 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics")
     implementation("com.google.firebase:firebase-config-ktx")
     implementation("com.google.firebase:firebase-perf-ktx")
+    implementation("com.google.firebase:firebase-messaging-ktx")
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
     //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
