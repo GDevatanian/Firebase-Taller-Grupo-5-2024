@@ -1,83 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- res/layout/activity_login.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/gray">
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".LoginActivity">
 
-    <TableLayout
-        android:id="@+id/contenedorImagen"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:paddingTop="50dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center"
-        tools:ignore="MissingConstraints">
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Iniciar Sesion" />
+
+        <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Registarse" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sign_in_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
         <ImageView
-            android:id="@+id/loginImage"
+            android:id="@+id/sign_in_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_userpp_vcimage"></ImageView>
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:paddingVertical="50dp"
+            android:src="@drawable/ic_userpp_vcimage" />
 
-    </TableLayout>
+        <EditText
+            android:id="@+id/sign_in_email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email" />
 
-    <TextView
-        android:id="@+id/tv_email"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/sign_in_password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/sign_in_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Sesion" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sign_up_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/contenedorImagen"
-        android:text="@string/email"
-        android:textSize="20sp"
-        android:gravity="center_horizontal"
-        android:paddingTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"></TextView>
+        android:orientation="vertical"
+        android:visibility="gone">
 
-    <EditText
-        android:id="@+id/et_enterEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_email"
-        android:gravity="center_horizontal"
-        android:maxLines="1"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingTop="20dp"
-        android:text="@string/enter_email"></EditText>
+        <TextView
+            android:id="@+id/sign_up_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"/>
 
-    <TextView
-        android:id="@+id/tv_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_enterEmail"
-        android:text="@string/password"
-        android:textSize="20sp"
-        android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"></TextView>
+        <EditText
+            android:id="@+id/sign_up_first_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="John"
+            android:backgroundTint="#DDDDDD"
+            android:padding="12dp"
+            android:textSize="16sp"/>
 
-    <EditText
-        android:id="@+id/et_enterPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_password"
-        android:gravity="center_horizontal"
-        android:maxLines="1"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingTop="20dp"
-        android:text="@string/enter_password"></EditText>
+        <TextView
+            android:id="@+id/sign_up_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"/>
 
-    <Button
-        android:layout_width="300dp"
+        <EditText
+            android:id="@+id/sign_up_last_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Doe"
+            android:backgroundTint="#DDDDDD"
+            android:padding="12dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/sign_up_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo Electrónico"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/sign_up_email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="johndoe@correo.com"
+            android:backgroundTint="#DDDDDD"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:inputType="textEmailAddress"/>
+
+        <TextView
+            android:id="@+id/sign_up_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/sign_up_password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="******"
+            android:backgroundTint="#DDDDDD"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/sign_up_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_enterPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/loginButton"
-        ></Button>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O inicia sesión con"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/google_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Con Google"/>
+
+        <Button
+            android:id="@+id/facebook_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Con Facebook" />
+    </LinearLayout>
+</LinearLayout>

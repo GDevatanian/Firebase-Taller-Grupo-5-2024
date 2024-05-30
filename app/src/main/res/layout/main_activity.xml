@@ -41,4 +41,14 @@
         app:layout_constraintTop_toBottomOf="@+id/crashlytics_button"
         app:layout_constraintVertical_bias="0.239" />
 
+    <Button
+        android:id="@+id/logout_main_activity_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
