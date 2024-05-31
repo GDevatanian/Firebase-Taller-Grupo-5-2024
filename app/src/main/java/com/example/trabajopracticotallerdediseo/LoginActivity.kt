@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
                     finish()
                 },
                 onFailure = { error ->
-                    Toast.makeText(this, "Fallo el inicio de sesion: $error", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Credenciales invalidas, Intente de nuevo", Toast.LENGTH_LONG).show()
                 }
             )
         }
