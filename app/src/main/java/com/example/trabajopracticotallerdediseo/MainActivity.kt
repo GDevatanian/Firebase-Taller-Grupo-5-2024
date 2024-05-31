@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                     mainActivityTitle.text = welcomeText
                 },
                 onFailure = { error ->
-                    // Manejar el error si la consulta falla
+                    mainActivityTitle.text = "Bienvenido Anónimo"
                 }
             )
         }

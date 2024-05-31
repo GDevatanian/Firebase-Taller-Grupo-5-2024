@@ -38,25 +38,20 @@ class AuthViewModel : ViewModel() {
             }
     }
 
-    fun getUserFirstName(userId: String?, onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
-        if (userId == null) {
-            onSuccess.invoke("Anónimo") // Se muestra "Anónimo" si el userId es nulo
-            return
-        }
-
+    fun getUserFirstName(userId: String, onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
         db.collection("users")
             .document(userId)
             .get()
             .addOnSuccessListener { document ->
                 if (document.exists()) {
                     val firstName = document.getString("firstName")
-                    if (firstName != null) {
+                    if (firstName != null && firstName.isNotBlank()) {
                         onSuccess.invoke(firstName)
                     } else {
                         onFailure.invoke("No se pudo obtener el nombre del usuario.")
                     }
                 } else {
-                    onFailure.invoke("No se encontró el documento del usuario.")
+                    onSuccess.invoke("Anónimo") // Devuelve "Anónimo" si no se encuentra el documento
                 }
             }
             .addOnFailureListener { e ->
