@@ -3,6 +3,7 @@ package com.example.trabajopracticotallerdediseo
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AuthViewModel : ViewModel() {
@@ -14,6 +15,12 @@ class AuthViewModel : ViewModel() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener { onSuccess.invoke() }
             .addOnFailureListener { e -> onFailure.invoke(e.message ?: "Authentication failed.") }
+    }
+
+    fun signInAnonymously( onSuccess: () -> Unit, onFailure: (String) -> Unit) {
+        auth.signInAnonymously()
+            .addOnSuccessListener { onSuccess.invoke() }
+            .addOnFailureListener { e -> onFailure.invoke(e.message ?: "Anonymous Login Failed") }
     }
 
     fun signUpWithEmailAndPassword(email: String, password: String,
@@ -56,6 +63,8 @@ class AuthViewModel : ViewModel() {
                 onFailure.invoke(e.message ?: "Error al obtener el nombre del usuario.")
             }
     }
+
+
 
     fun addUserInfo(userId: String, firstName: String, lastName: String,
                     onSuccess: () -> Unit, onFailure: (String) -> Unit) {

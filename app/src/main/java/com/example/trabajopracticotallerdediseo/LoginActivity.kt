@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         val signUpButton: Button = findViewById(R.id.sign_up_button)
         val signInLoginButton: Button = findViewById(R.id.sign_in_login_button)
         val signUpLoginButton: Button = findViewById(R.id.sign_up_login_button)
+        val anonymousLoginButton: Button = findViewById(R.id.anonymous_login_button)
         val googleLoginButton: Button = findViewById(R.id.google_login_button)
         val facebookLoginButton: Button = findViewById(R.id.facebook_login_button)
         val signInContainer: LinearLayout = findViewById(R.id.sign_in_container)
@@ -67,6 +68,18 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, "Fallo el inicio de sesion: $error", Toast.LENGTH_LONG).show()
                 }
             )
+        }
+
+        anonymousLoginButton.setOnClickListener {
+            viewModel.signInAnonymously(
+                onSuccess = {
+                Toast.makeText(this, "Inicio de sesion anonimo exitoso", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                finish()
+            },
+                onFailure = { error ->
+                    Toast.makeText(this, "Fallo el inicio de sesion: $error", Toast.LENGTH_LONG).show()
+                })
         }
 
         signUpLoginButton.setOnClickListener {

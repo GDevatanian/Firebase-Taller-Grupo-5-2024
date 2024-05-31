@@ -62,6 +62,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Iniciar Sesion" />
+
+        <Button
+            android:id="@+id/anonymous_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inicio de Sesion Anonimo"/>
     </LinearLayout>
 
     <LinearLayout
