@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">TrabajoPracticoTallerDeDiseño</string>
-    <string name="email">Email:</string>
+    <string name="email">Email</string>
     <string name="enter_email">Ingrese su email</string>
-    <string name="password">Contraseña:</string>
+    <string name="password">Contraseña</string>
     <string name="enter_password">Ingrese su contraseña</string>
-    <string name="loginButton">Iniciar sesion</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="register_button">Registrarse</string>
+    <string name="google_btn">Google</string>
+    <string name="facebook_btn">Facebook</string>
+    <string name="guest_login">Inicio de sesión anonimo</string>
+    <string name="try_other_login">O inicia sesión con</string>
 </resources>
