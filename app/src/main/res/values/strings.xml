@@ -5,4 +5,5 @@
     <string name="password">Contraseña:</string>
     <string name="enter_password">Ingrese su contraseña</string>
     <string name="loginButton">Iniciar sesion</string>
+    <string name="boton_clickeado">Boton Clickeado</string>
 </resources>
