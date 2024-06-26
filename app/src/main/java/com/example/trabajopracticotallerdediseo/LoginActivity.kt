@@ -24,7 +24,6 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
 
-
         val signInButton: Button = findViewById(R.id.sign_in_button)
         val signUpButton: Button = findViewById(R.id.sign_up_button)
         val signInLoginButton: Button = findViewById(R.id.sign_in_login_button)
@@ -40,9 +39,6 @@ class LoginActivity : AppCompatActivity() {
         val signUpLastNameEditText: EditText = findViewById(R.id.sign_up_last_name_edit_text)
         val signUpEmailEditText: EditText = findViewById(R.id.sign_up_email_edit_text)
         val signUpPasswordEditText: EditText = findViewById(R.id.sign_up_password_edit_text)
-        /*val signInImage: ImageView = findViewById(R.id.sign_in_image)
-        val loginImageUrl = "https://firebasestorage.googleapis.com/v0/b/grupo-5-taller-de-diseno.appspot.com/o/login_stock_photo.jpg?alt=media&token=fe2edf42-224a-4a21-9435-997c2a1482c1"
-        Glide.with(this).load(loginImageUrl).into(signInImage)*/
 
         signInButton.setOnClickListener {
             signInContainer.visibility = View.VISIBLE
@@ -90,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
 
             viewModel.signUpWithEmailAndPassword(email, password,
                 onSuccess = {
-                    viewModel.addUserInfo(auth.currentUser?.uid ?: "", firstName, lastName,
+                    viewModel.addUserInfo(auth.currentUser?.uid ?: "", firstName, lastName, // agrega la informacion de nombre y apellido a la base de datos
                         onSuccess = {
                             Toast.makeText(this, "Cuenta creada exitosamente.", Toast.LENGTH_LONG).show()
                         },
