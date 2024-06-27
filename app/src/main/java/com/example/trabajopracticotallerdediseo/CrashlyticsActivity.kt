@@ -20,19 +20,19 @@ class CrashlyticsActivity : AppCompatActivity() {
         val backButton: Button = findViewById(R.id.crashlytics_activity_back_button)
         crashButton.setOnClickListener {
             // Logear evento de analytics
-            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {
+            firebaseAnalytics.logEvent(R.string.boton_clickeado.toString()) {
                 param(FirebaseAnalytics.Param.ITEM_ID, "anr_button")
                 param(FirebaseAnalytics.Param.ITEM_NAME, "Boton de Crash Clickeado")
                 param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
             }
 
             // Causar un crash
-            throw RuntimeException("Crash de prueba para Crashlytics")
+            throw NullPointerException("Crash de prueba para Crashlytics")
         }
 
         anrButton.setOnClickListener {
             // Logear evento de analytics
-            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {
+            firebaseAnalytics.logEvent(R.string.boton_clickeado.toString()) {
                 param(FirebaseAnalytics.Param.ITEM_ID, "anr_button")
                 param(FirebaseAnalytics.Param.ITEM_NAME, "Boton de ANR Clickeado")
                 param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")

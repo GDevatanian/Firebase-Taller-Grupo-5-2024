@@ -57,13 +57,6 @@ class RemoteConfigActivity : AppCompatActivity() {
         firebaseRemoteConfig.fetchAndActivate()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val updated = task.result
-                    if (updated) {
-                        Log.i("RemoteConfigActivity", "Remote config values were updated")
-                    } else {
-                        Log.i("RemoteConfigActivity", "Remote config values were already up-to-date")
-                    }
-
                     // Trae los valores que se definieron en la consola de firebase para estos parametros
                     val buttonOneVisibility = firebaseRemoteConfig.getBoolean("button_one_visibility")
                     val buttonTwoVisibility = firebaseRemoteConfig.getBoolean("button_two_visibility")

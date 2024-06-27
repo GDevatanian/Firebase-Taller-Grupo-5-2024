@@ -100,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
                             .show()
                     })
             }
-
+        
             signUpLoginButton.setOnClickListener {
                 val email = signUpEmailEditText.text.toString().trim()
                 val password = signUpPasswordEditText.text.toString().trim()

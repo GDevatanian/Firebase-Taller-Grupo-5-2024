@@ -17,4 +17,6 @@
     <string name="correo_electronico">Correo Electrónico</string>
     <string name="email_example">johndoe@correo.com</string>
     <string name="password_example">******</string>
+    <string name="boton_clickeado">Boton Clickeado</string>
+
 </resources>
