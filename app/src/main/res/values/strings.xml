@@ -10,4 +10,25 @@
     <string name="facebook_btn">Facebook</string>
     <string name="guest_login">Inicio de sesión anonimo</string>
     <string name="try_other_login">O inicia sesión con</string>
+    <string name="nombre">Nombre</string>
+    <string name="name_example">John</string>
+    <string name="apellido">Apellido</string>
+    <string name="surname_example">Doe</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="email_example">johndoe@correo.com</string>
+    <string name="password_example">******</string>
+    <string name="boton_clickeado">Boton Clickeado</string>
+    <string name="crashlytics_activity">Crashlytics Activity</string>
+    <string name="crash_button">Crash Button</string>
+    <string name="anr_button">ANR Button</string>
+    <string name="back">Volver</string>
+    <string name="main_activity">Main Activity</string>
+    <string name="boton_a_crashlytics">Boton a crashlytics</string>
+    <string name="boton_a_remote_config">Boton a remote config</string>
+    <string name="exit">Salir</string>
+    <string name="push_notification_activity">Push Notification Activity</string>
+    <string name="remote_config_activity">Remote Config Activity</string>
+    <string name="btn_1">Boton 1</string>
+    <string name="btn_2">Boton 2</string>
+
 </resources>
