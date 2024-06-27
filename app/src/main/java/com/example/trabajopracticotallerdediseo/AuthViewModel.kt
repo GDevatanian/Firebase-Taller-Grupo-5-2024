@@ -11,9 +11,13 @@ class AuthViewModel : ViewModel() {
 
     fun signInWithEmailAndPassword(email: String, password: String,
                                    onSuccess: () -> Unit, onFailure: (String) -> Unit) {
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnSuccessListener { onSuccess.invoke() }
-            .addOnFailureListener { e -> onFailure.invoke(e.message ?: "Authentication failed.") }
+        if (email.isNullOrEmpty() || password.isNullOrEmpty()) {
+            onFailure.invoke("Authentication failed.")
+        } else {
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnSuccessListener { onSuccess.invoke() }
+                .addOnFailureListener { e -> onFailure.invoke(e.message ?: "Authentication failed.") }
+        }
     }
 
     fun signInAnonymously( onSuccess: () -> Unit, onFailure: (String) -> Unit) {
