@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         }
         logoutButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // se limpia el stack de pantallas
             startActivity(intent)
         }
     }

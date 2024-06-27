@@ -4,18 +4,14 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.StateListDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.res.colorResource
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -47,9 +43,6 @@ class LoginActivity : AppCompatActivity() {
             val signUpEmailEditText: EditText = findViewById(R.id.sign_up_email_edit_text)
             val signUpPasswordEditText: EditText = findViewById(R.id.sign_up_password_edit_text)
             val alternateLoginText: LinearLayout = findViewById(R.id.alternate_sign_up)
-            /*val signInImage: ImageView = findViewById(R.id.sign_in_image)
-        val loginImageUrl = "https://firebasestorage.googleapis.com/v0/b/grupo-5-taller-de-diseno.appspot.com/o/login_stock_photo.jpg?alt=media&token=fe2edf42-224a-4a21-9435-997c2a1482c1"
-        Glide.with(this).load(loginImageUrl).into(signInImage)*/
 
         animarBotonesDeGoogleYFacebook(googleLoginButton, facebookLoginButton)
 
@@ -135,27 +128,20 @@ class LoginActivity : AppCompatActivity() {
                             .show()
                     }
                 )
-
             }
 
             googleLoginButton.setOnClickListener {
                 // Manejar el login de google
-
-
             }
 
             facebookLoginButton.setOnClickListener {
                 // Manejar el login de facebook
-
             }
     }
 
     fun animarBotonesDeGoogleYFacebook(googleLoginButton:Button, facebookLoginButton:Button){
-
         val statesGooglebtn = StateListDrawable()
-
         val defaultColor = ColorDrawable(ContextCompat.getColor(this,(R.color.gray)))
-
         val pressedColor = ColorDrawable(ContextCompat.getColor(this,(R.color.white)))
 
         statesGooglebtn.addState(intArrayOf(android.R.attr.state_pressed), pressedColor)
@@ -169,7 +155,5 @@ class LoginActivity : AppCompatActivity() {
         statesFacebookbtn.addState(intArrayOf(), defaultColor)
 
         facebookLoginButton.background = statesFacebookbtn
-
     }
-
 }
