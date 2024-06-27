@@ -10,4 +10,11 @@
     <string name="facebook_btn">Facebook</string>
     <string name="guest_login">Inicio de sesión anonimo</string>
     <string name="try_other_login">O inicia sesión con</string>
+    <string name="nombre">Nombre</string>
+    <string name="name_example">John</string>
+    <string name="apellido">Apellido</string>
+    <string name="surname_example">Doe</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="email_example">johndoe@correo.com</string>
+    <string name="password_example">******</string>
 </resources>

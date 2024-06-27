@@ -6,50 +6,49 @@
     android:layout_marginHorizontal="16dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_sign_up"
+        android:id="@+id/cv_sign_in_btn_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
-        app:cardCornerRadius="30dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="10dp">
+        app:cardCornerRadius="30dp">
 
         <Button
             android:id="@+id/sign_in_button"
+            android:background="@color/less_black"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/login_button" />
+            android:text="@string/login_button"
+            android:padding="16dp"/>
     </androidx.cardview.widget.CardView>
 
 <androidx.cardview.widget.CardView
-    android:id="@+id/cv_register"
+    android:id="@+id/cv_sign_up_btn_container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintStart_toEndOf="@id/cv_sign_up"
+    app:layout_constraintStart_toEndOf="@id/cv_sign_in_btn_container"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     android:layout_marginLeft="50dp"
     android:layout_marginTop="50dp"
     android:layout_marginRight="30dp"
-    app:cardCornerRadius="30dp"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:layout_marginBottom="10dp"
-    >
+    app:cardCornerRadius="30dp">
         <Button
             android:id="@+id/sign_up_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register_button" />
+            android:background="@color/gray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="@string/register_button"
+            android:padding="16dp"/>
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/sign_in_container"
-        app:layout_constraintTop_toBottomOf="@+id/cv_sign_up"
+        app:layout_constraintTop_toBottomOf="@+id/cv_sign_in_btn_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -66,12 +65,17 @@
 
         <EditText
             android:id="@+id/sign_in_email_edit_text"
+            android:maxLines="1"
+            android:lines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email" />
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/sign_in_password_edit_text"
+            android:maxLines="1"
+            android:lines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -92,19 +96,20 @@
             android:text="@string/guest_login"/>
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/sign_up_container"
-        app:layout_constraintTop_toBottomOf="@id/cv_sign_up"
+        app:layout_constraintTop_toBottomOf="@id/cv_sign_in_btn_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/alternate_sign_up"
         android:visibility="gone">
 
         <TextView
             android:id="@+id/sign_up_first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre"
+            android:text="@string/nombre"
             android:textSize="16sp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"/>
@@ -113,16 +118,19 @@
             android:id="@+id/sign_up_first_name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="John"
+            android:maxLines="1"
+            android:lines="1"
+            android:hint="@string/name_example"
             android:backgroundTint="#DDDDDD"
             android:padding="12dp"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:inputType="textPersonName"/>
 
         <TextView
             android:id="@+id/sign_up_last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Apellido"
+            android:text="@string/apellido"
             android:textSize="16sp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"/>
@@ -131,16 +139,19 @@
             android:id="@+id/sign_up_last_name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Doe"
+            android:maxLines="1"
+            android:lines="1"
+            android:hint="@string/surname_example"
             android:backgroundTint="#DDDDDD"
             android:padding="12dp"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:inputType="textPersonName"/>
 
         <TextView
             android:id="@+id/sign_up_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo Electrónico"
+            android:text="@string/correo_electronico"
             android:textSize="16sp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"/>
@@ -149,7 +160,9 @@
             android:id="@+id/sign_up_email_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="johndoe@correo.com"
+            android:maxLines="1"
+            android:lines="1"
+            android:hint="@string/email_example"
             android:backgroundTint="#DDDDDD"
             android:padding="12dp"
             android:textSize="16sp"
@@ -159,7 +172,7 @@
             android:id="@+id/sign_up_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contraseña"
+            android:text="@string/password"
             android:textSize="16sp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"/>
@@ -168,7 +181,9 @@
             android:id="@+id/sign_up_password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="******"
+            android:maxLines="1"
+            android:lines="1"
+            android:hint="@string/password_example"
             android:backgroundTint="#DDDDDD"
             android:padding="12dp"
             android:textSize="16sp"
@@ -179,13 +194,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/register_button" />
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/alternate_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_container"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_container"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="24dp"
@@ -230,7 +245,8 @@
             android:id="@+id/google_login_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/google_btn" />
+            android:text="@string/google_btn"
+            android:background="@color/gray"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -247,6 +263,7 @@
         android:layout_marginTop="24dp">
         <Button
             android:id="@+id/facebook_login_button"
+            android:background="@color/gray"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/facebook_btn" />
