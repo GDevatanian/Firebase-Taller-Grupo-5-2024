@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         crashlyticsButton.setOnClickListener {
             // Logear evento de analytics
-            firebaseAnalytics.logEvent(R.string.boton_clickeado.toString()) {
+            firebaseAnalytics.logEvent(Constants.BOTON_CLICKEADO) {
                 param(FirebaseAnalytics.Param.ITEM_ID, "crashlytics_button")
                 param(FirebaseAnalytics.Param.ITEM_NAME, "Boton para ir a la pantalla de Crashlytics clickeado")
                 param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
         remoteConfigButton.setOnClickListener {
             // Logear evento de analytics
-            firebaseAnalytics.logEvent(R.string.boton_clickeado.toString()) {
+            firebaseAnalytics.logEvent(Constants.BOTON_CLICKEADO) {
                 param(FirebaseAnalytics.Param.ITEM_ID, "remote_config_button")
                 param(FirebaseAnalytics.Param.ITEM_NAME, "Boton para ir a la pantalla de Remote Config clickeado")
                 param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
