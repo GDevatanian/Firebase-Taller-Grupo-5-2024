@@ -28,17 +28,21 @@ class AuthViewModel : ViewModel() {
 
     fun signUpWithEmailAndPassword(email: String, password: String,
                                    onSuccess: () -> Unit, onFailure: (String) -> Unit) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnSuccessListener {
-                auth.currentUser?.let {
-                    onSuccess.invoke()
+        if (email.isNullOrEmpty() || password.isNullOrEmpty()) {
+            onFailure.invoke("Authentication failed.")
+        } else {
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnSuccessListener {
+                    auth.currentUser?.let {
+                        onSuccess.invoke()
+                    }
                 }
-            }
-            .addOnFailureListener { e ->
-                val errorMessage = e.message ?: "Registration failed."
-                Log.e("AuthViewModel", "Error creating user: $errorMessage")
-                onFailure.invoke(errorMessage)
-            }
+                .addOnFailureListener { e ->
+                    val errorMessage = e.message ?: "Registration failed."
+                    Log.e("AuthViewModel", "Error creating user: $errorMessage")
+                    onFailure.invoke(errorMessage)
+                }
+        }
     }
 
     fun getUserFirstName(userId: String, onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
